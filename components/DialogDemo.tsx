@@ -1,4 +1,4 @@
-import { X } from "@tamagui/lucide-icons";
+import { Edit3, X } from "@tamagui/lucide-icons";
 import {
   Adapt,
   Button,
@@ -8,16 +8,16 @@ import {
   Label,
   Sheet,
   Unspaced,
-  YStack
+  YStack,
+  XStack
 } from "tamagui";
 
-import SelectDemo from "./SelectDemo";
 
-export default function DialogDemo() {
+export default function DialogDemo({ Boton = "boton", Title0 = "titlie0", Title1 = "title1", Title2 = "title2", Title3 = "title3", Title4 = "titlie4", Title5 = "title5", Title6 = "title6", Title7 = "title7", Title11 = "title11", Data1 = "", Data2 = "", Data3 = "", Data4 = "", Data5 = "", Data6 = "", Data7 = "", Data11 = "" }) {
   return (
     <Dialog modal>
       <Dialog.Trigger asChild>
-        <Button>Edit Profile</Button>
+        <Button icon={Edit3}>{Boton}</Button>
       </Dialog.Trigger>
 
       <Adapt
@@ -64,19 +64,55 @@ export default function DialogDemo() {
           exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }}
           space
         >
-          <Dialog.Title>Edit profile</Dialog.Title>
-          <Dialog.Description>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </Dialog.Description>
+          <Dialog.Title>{Title0}</Dialog.Title>
           <Fieldset>
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name">{Title1}</Label>
             <Input
               id="name"
-              defaultValue="Nate Wienert"
+              defaultValue={Data1}
             />
           </Fieldset>
 
-          <SelectDemo />
+          <XStack>
+            <Fieldset>
+              <Label htmlFor="time">{Title2}</Label>
+              <Input
+                id="time"
+                defaultValue={Data2}
+              />
+            </Fieldset>
+            <Fieldset>
+              <Label htmlFor="name">{Title3}</Label>
+              <Input
+                id="director"
+                defaultValue={Data3}
+              />
+            </Fieldset>
+          </XStack>
+
+          <Fieldset>
+            <Label htmlFor="country">{Title4}</Label>
+            <Input
+              id="country"
+              defaultValue={Data4}
+            />
+          </Fieldset>
+
+          <Fieldset>
+            <Label htmlFor="ticketOffice">{Title5}</Label>
+            <Input
+              id="ticketOffice"
+              defaultValue={Data5}
+            />
+          </Fieldset>
+
+          <Fieldset>
+            <Label htmlFor="Investment">{Title11}</Label>
+            <Input
+              id="Investment"
+              defaultValue={Data11}
+            />
+          </Fieldset>
 
           <YStack
             alignItems="flex-end"
@@ -90,7 +126,7 @@ export default function DialogDemo() {
                 theme="green_Button"
                 aria-label="Close"
               >
-                Save changes
+                Save
               </Button>
             </Dialog.Close>
           </YStack>
@@ -111,4 +147,4 @@ export default function DialogDemo() {
       </Dialog.Portal>
     </Dialog>
   );
-}
+};

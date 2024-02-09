@@ -1,7 +1,8 @@
 import type { CardProps } from 'tamagui';
-import { Pencil, Trash } from "@tamagui/lucide-icons";
+import { Trash } from "@tamagui/lucide-icons";
 import { Button, Card, H2, Paragraph, XStack } from 'tamagui';
 import { router } from 'expo-router';  // Corregir la importación de 'router'
+import DialogDemo from './DialogDemo';
 
 export function CharacterCard(props: CardProps) {
   return (
@@ -14,7 +15,7 @@ export function CharacterCard(props: CardProps) {
 
       <Card.Footer padded>
         <XStack flex={1} />
-        <Button borderRadius="$10" icon={Pencil} onPress={() => router.push("/postFilm")}></Button>
+        <DialogDemo/>
         <Button borderRadius="$10" icon={Trash}></Button>
       </Card.Footer>
     </Card>

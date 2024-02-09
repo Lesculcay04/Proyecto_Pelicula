@@ -1,6 +1,5 @@
 import { H1, H5,ScrollView } from "tamagui";
 import { MyStack } from "../../components/MyStack";
-import {DemoCard} from "../../components/Card";
 import { CharacterCard } from "../../components/Character";
 
 export default function Tab1() {
